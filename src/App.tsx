@@ -1,18 +1,13 @@
 import React from 'react';
 import './App.css';
-import HomePage from './pages/HomePage'
-import Header from './layouts/Header';
+import MainLayout from './layouts/MainLayout';
 import Footer from './layouts/Footer';
-
 
 function App() {
   return (
     <div className="App">
-     <div className='flex'>
-      <Header />
-     <HomePage />
-     <Footer />
-     </div>
+      <MainLayout />
+      <Footer />
     </div>
   );
 }
