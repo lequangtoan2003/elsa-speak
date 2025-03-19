@@ -1,5 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
-import DetailItem from '../layouts/DetailItem';
+import Header from '../layouts/Header';
 import Footer from './Footer';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
@@ -27,14 +27,12 @@ const MainLayout: React.FC = () => {
     };
 
     return (
-        <div className="flex h-screen">
-            {/* Sidebar bên trái */}
-            <div className="w-1/4 bg-gray-800 text-white p-4">
-                <DetailItem activePage={activePage} setActivePage={setActivePage} />
-            </div>
+        <div className="flex">
+            {/* Sidebar cố định bên trái */}
+            <Header activePage={activePage} setActivePage={setActivePage} />
 
             {/* Nội dung chính */}
-            <div className="flex-1 p-4 bg-gray-200 rounded-lg">
+            <div className="flex-1 h-screen overflow-y-auto bg-gray-200">
                 <Suspense fallback={<div>⏳ Đang tải...</div>}>
                     {renderPage()}
                 </Suspense>
