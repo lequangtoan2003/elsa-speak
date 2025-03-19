@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ activePage, setActivePage }) => {
     return (
-        <div className="w-[20%] h-screen fixed top-0 left-0 bg-primary shadow-lg border-r-white border-r-2">
+        <div className="w-[20%] h-screen fixed top-0 left-0 bg-primary shadow-lg border-r-white border-r-2 z-10">
             <nav className="flex flex-col pl-4 w-full h-full items-center py-6">
                 <div className="text-xl font-semibold cursor-pointer text-white">
                     Toeic
