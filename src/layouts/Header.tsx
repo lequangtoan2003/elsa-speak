@@ -1,29 +1,42 @@
 import React from "react";
-import DetailItem from "./DetailItem";
+import { NavLink } from "react-router-dom";
+import homeIcon from "../assets/homeicon.png";
+import bookIcon from "../assets/bookicon.png";
+import binocularsIcon from "../assets/binocularsicon.png";
+import profileIcon from "../assets/profileicon.png";
 
-interface HeaderProps {
-    activePage: string;
-    setActivePage: React.Dispatch<React.SetStateAction<string>>;
-}
+const Menus = [
+  { title: "Trang chủ", path: "/", icon: homeIcon },
+  { title: "Học", path: "/study", icon: bookIcon },
+  { title: "Phát hiện", path: "/detect", icon: binocularsIcon },
+  { title: "Hồ sơ", path: "/profile", icon: profileIcon },
+];
 
-const Header: React.FC<HeaderProps> = ({ activePage, setActivePage }) => {
-    return (
-        <div className="w-[20%] h-screen fixed top-0 left-0 bg-primary shadow-lg border-r-white border-r-2 z-10">
-            <nav className="flex flex-col pl-4 w-full h-full items-center py-6">
-                <div className="text-xl font-semibold cursor-pointer text-white">
-                    Toeic
-                </div>
-                <div className="flex flex-col items-start w-full">
-                    <DetailItem activePage={activePage} setActivePage={setActivePage} />
-                </div>
-                <ul className="text-sm text-gray-300 font-medium mt-auto pb-6">
-                    <li>
-                        <a href="/#" className="hover:text-white">English</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    );
+const Header: React.FC = () => {
+  return (
+    <nav className="w-1/5 bg-primary h-screen p-4 text-white shadow-lg">
+      <ul className="flex flex-col gap-4 mt-8">
+        {Menus.map((menu, index) => (
+          <li key={index}>
+            <NavLink
+              to={menu.path}
+              className={({ isActive }) =>
+                `flex items-center gap-3 p-3 rounded-xl transition-all duration-300
+                ${
+                  isActive
+                    ? "bg-yellow-400 text-blue-900 shadow-md scale-105"
+                    : "hover:bg-primary hover:scale-105 hover:shadow-md"
+                }`
+              }
+            >
+              <img src={menu.icon} alt={menu.title} className="w-6 h-6" />
+              {menu.title}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
 };
 
 export default Header;
