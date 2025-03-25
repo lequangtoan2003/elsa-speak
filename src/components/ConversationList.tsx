@@ -8,10 +8,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 const ConversationList: React.FC = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
     responsive: [
       {
@@ -30,21 +30,24 @@ const ConversationList: React.FC = () => {
   };
 
   return (
-    <div className="bg-primary bg-opacity-70 rounded-xl p-4">
-      <div className="text-white font-bold mb-4">Elsa AI Conversation</div>
+    <div className="bg-primary bg-opacity-70 rounded-xl py-4">
+      <div className="text-color ml-24 font-bold mb-4">Trang chủ</div>
       <Slider {...settings}>
         {data_products.map((product: Product, i: number) => (
           <div key={i} className="px-2">
             <Item
               id={product.id}
-              title={product.title}
-              image={product.image}
-              time={product.time}
-              level={product.level}
+              author={product.author}
+              like={product.like}
+              major={product.major}
+              topic={product.topic}
+              vocab={product.vocab}
             />
           </div>
         ))}
       </Slider>
+      <div className="mx-10 w-[60%] border-b border-gray-400 pt-5"></div>
+      <div className="mx-6 text-color font-bold mb-4n pt-5">Hôm nay chúng ta nên làm gì?</div>
     </div>
   );
 };

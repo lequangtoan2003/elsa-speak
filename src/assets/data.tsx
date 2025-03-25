@@ -1,4 +1,4 @@
-import p1_img from './product_1.png';
+import p1_img from './product_5.jpg';
 
 interface Product {
   id: number;
@@ -6,6 +6,11 @@ interface Product {
   image: string;
   time: string;
   level: string;
+  major: string;
+  topic: string;
+  author: string;
+  vocab: string;
+  like: string;
 }
 
 const productData: Product[] = [
@@ -15,6 +20,11 @@ const productData: Product[] = [
     image: p1_img,
     time: "3-5 minutes",
     level: "easy0",
+    major: "ielts",
+    topic: "phát âm",
+    author: "bởi quangtoan2003",
+    vocab: "32 từ vựng",
+    like: "33.7k"
   },
   {
     id: 2,
@@ -22,6 +32,11 @@ const productData: Product[] = [
     image: p1_img,
     time: "3-5 minutes",
     level: "easy1",
+    major: "ielts",
+    topic: "phát âm",
+    author: "bởi quangtoan2003",
+    vocab: "32 từ vựng",
+    like: "33.7k"
   },
   {
     id: 3,
@@ -29,6 +44,11 @@ const productData: Product[] = [
     image: p1_img,
     time: "3-5 minutes",
     level: "easy2",
+    major: "ielts",
+    topic: "phát âm",
+    author: "bởi quangtoan2003",
+    vocab: "32 từ vựng",
+    like: "33.7k"
   },
   {
     id: 4,
@@ -36,6 +56,11 @@ const productData: Product[] = [
     image: p1_img,
     time: "3-5 minutes",
     level: "easy3",
+    major: "ielts",
+    topic: "phát âm",
+    author: "bởi quangtoan2003",
+    vocab: "32 từ vựng",
+    like: "33.7k"
   },
   {
     id: 5,
@@ -43,6 +68,11 @@ const productData: Product[] = [
     image: p1_img,
     time: "3-5 minutes",
     level: "easy4",
+    major: "ielts",
+    topic: "phát âm",
+    author: "bởi quangtoan2003",
+    vocab: "32 từ vựng",
+    like: "33.7k"
   },
 ];
 
