@@ -14,8 +14,8 @@ const Menus = [
 
 const Header: React.FC = () => {
   return (
-    <nav className="w-1/5 bg-primary h-screen p-4 text-white shadow-lg">
-      <ul className="flex flex-col gap-4 mt-8">
+    <nav className="flex flex-col w-1/5 bg-primary h-screen  text-white">
+      <ul className="flex flex-col gap-4 mt-8 flex-grow p-4">
         {Menus.map((menu, index) => (
           <li key={index}>
             <NavLink
@@ -24,8 +24,8 @@ const Header: React.FC = () => {
                 `flex items-center gap-3 p-3 rounded-xl transition-all duration-300
                 ${
                   isActive
-                    ? "bg-yellow-400 text-blue-900 shadow-md scale-105"
-                    : "hover:bg-primary hover:scale-105 hover:shadow-md"
+                    ? "bg-yellow-400 text-color-hover shadow-md scale-105"
+                    : "hover:bg-primary text-color hover:scale-105 hover:shadow-md"
                 }`
               }
             >
@@ -35,6 +35,15 @@ const Header: React.FC = () => {
           </li>
         ))}
       </ul>
+      <div className="flex items-center w-full h-10 bg-gray-200 drop-shadow-lg">
+        <div className="flex ml-4 mr-4 w-7 h-7">
+          <img src={profileIcon} alt="" />
+        </div>
+        <div className="ml-5 ">
+          <p className="text-sm text-color">Quang Toàn</p>
+          <p className="text-xs text-color">abc@gmail.com</p>
+        </div>
+      </div>
     </nav>
   );
 };
