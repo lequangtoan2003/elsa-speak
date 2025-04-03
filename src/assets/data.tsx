@@ -1,4 +1,5 @@
 import p1_img from './product_5.jpg';
+import p2_img from './planet1.png';
 
 interface Product {
   id: number;
@@ -11,6 +12,9 @@ interface Product {
   author: string;
   vocab: string;
   like: string;
+  transcription: string;
+  lessons: string;
+  image2?: string;
 }
 
 const productData: Product[] = [
@@ -24,7 +28,10 @@ const productData: Product[] = [
     topic: "phát âm",
     author: "bởi quangtoan2003",
     vocab: "32 từ vựng",
-    like: "33.7k"
+    like: "33.7k",
+    transcription: "/i/, /I/",
+    lessons: "0/14 Bài học",
+    image2: p2_img
   },
   {
     id: 2,
@@ -36,7 +43,10 @@ const productData: Product[] = [
     topic: "phát âm",
     author: "bởi quangtoan2003",
     vocab: "32 từ vựng",
-    like: "33.7k"
+    like: "33.7k",
+    transcription: "/i/, /I/",
+    lessons: "0/14 Bài học",
+    image2: p2_img
   },
   {
     id: 3,
@@ -48,7 +58,10 @@ const productData: Product[] = [
     topic: "phát âm",
     author: "bởi quangtoan2003",
     vocab: "32 từ vựng",
-    like: "33.7k"
+    like: "33.7k",
+    transcription: "/i/, /I/",
+    lessons: "0/14 Bài học",
+    image2: p2_img
   },
   {
     id: 4,
@@ -60,7 +73,10 @@ const productData: Product[] = [
     topic: "phát âm",
     author: "bởi quangtoan2003",
     vocab: "32 từ vựng",
-    like: "33.7k"
+    like: "33.7k",
+    transcription: "/i/, /I/",
+    lessons: "0/14 Bài học",
+    image2: p2_img
   },
   {
     id: 5,
@@ -72,7 +88,10 @@ const productData: Product[] = [
     topic: "phát âm",
     author: "bởi quangtoan2003",
     vocab: "32 từ vựng",
-    like: "33.7k"
+    like: "33.7k",
+    transcription: "/i/, /I/",
+    lessons: "0/14 Bài học",
+    image2: p2_img
   },
 ];
 

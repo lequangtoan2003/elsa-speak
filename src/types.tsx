@@ -9,4 +9,7 @@ export interface Product {
     author?: string;
     vocab?: string;
     like?: string;
+    transcription?: string;
+    lessons?: string;
+    image2?: string;
     }
