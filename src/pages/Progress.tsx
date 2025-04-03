@@ -1,7 +1,7 @@
 import React from 'react';
 import StudyContentList from '../components/StudyContentList';
 
-const DetectPage: React.FC = () => {
+const Progress: React.FC = () => {
     return (
         <div className="bg-home h-screen overflow-y-auto scrollbar-hide">
       {/* Header cố định */}
@@ -18,4 +18,4 @@ const DetectPage: React.FC = () => {
     );
 };
 
-export default DetectPage;
+export default Progress;

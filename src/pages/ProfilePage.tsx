@@ -1,9 +1,11 @@
 import React from 'react';
+import ProfileList from '../components/ProfileList';
+
 
 const ProfilePage: React.FC = () => {
     return (
-        <div className="text-center text-2xl text-purple-500">
-            Đây là trang Hồ sơ
+        <div className="bg-gray-200 w-[95%] h-[95%] m-auto mt-5">
+            <ProfileList />
         </div>
     );
 };
