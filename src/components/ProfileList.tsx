@@ -63,7 +63,7 @@ return (
                     <img className='w-7 h-7' src={notificationIcon} alt="" />
                     <div className='flex flex-1 text-xl'>Notification</div>
                     </Link></li>
-                    <li><Link className='flex gap-4' to="/">
+                    <li><Link className='flex gap-4' to="/register">
                     <img className='w-7 h-7' src={logoutIcon} alt="" />
                     <div className='flex flex-1 text-xl'>Logout</div>
                     </Link></li>

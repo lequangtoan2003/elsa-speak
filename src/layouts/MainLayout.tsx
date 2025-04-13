@@ -12,6 +12,9 @@ import TopicLearning from "../pages/TopicLearning";
 import Certificate from "../pages/Certificate";
 import Progress from "../pages/Progress";
 import ProfileDetails from "../pages/ProfileDetails";
+import RegisterPage from "../pages/RegisterPage";
+import LoginPage from "../pages/LoginPage";
+
 
 const MainLayout: React.FC = () => {
   const location = useLocation(); // Lấy đường dẫn hiện tại
@@ -19,7 +22,9 @@ const MainLayout: React.FC = () => {
   return (
     <div className="flex h-screen">
       {/* Sidebar (Header) */}
-      <Header />
+      {location.pathname !== "/register" && location.pathname !== "/login" && (
+        <Header />
+      )}
 
       {/* Nội dung chính */}
       <div className="flex-1 h-screen overflow-y-auto scrollbar-hide bg-home">
@@ -34,12 +39,15 @@ const MainLayout: React.FC = () => {
           <Route path="/topic-learning" element={<TopicLearning />} />
           <Route path="/certificate" element={<Certificate />} />
           <Route path="/profiledetails" element={<ProfileDetails />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
 
         </Routes>
       </div>
-
+      
+        {/* Sidebar (Footer) */}
       {/* Điều kiện render Footer chỉ khi không phải là trang Profile */}
-      {location.pathname !== "/profile" && (
+      {location.pathname !== "/profile" && location.pathname !== "/register"  && location.pathname !== "/login" && (
         <div className="w-[28%] bg-primary text-white p-4 flex items-center justify-center">
           <Footer />
         </div>

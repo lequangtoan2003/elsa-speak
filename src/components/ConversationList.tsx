@@ -46,7 +46,7 @@ const ConversationList: React.FC = () => {
           </div>
         ))}
       </Slider>
-      <div className="mx-10 w-[60%] border-b border-gray-400 pt-5"></div>
+      <div className="mx-12 w-[63%] border-b border-gray-400 pt-5"></div>
       <div className="mx-6 text-color font-bold mb-4n pt-5">Hôm nay chúng ta nên làm gì?</div>
     </div>
   );
