@@ -11,7 +11,8 @@ module.exports = {
       },
       animation: {
         popoverDown: 'popoverSlideDown 0.3s ease-out',  // Animation slide xuống
-        popoverUp: 'popoverSlideUp 0.3s ease-in',  // Animation slide lên
+        popoverUp: 'popoverSlideUp 0.3s ease-in',
+        flyUp: 'flyUp 0.5s ease-out forwards',  // Animation slide lên
       },
       keyframes: {
         popoverSlideDown: {
@@ -34,9 +35,20 @@ module.exports = {
             opacity: '0',
           },
         },
+        flyUp: {
+          '0%': {
+            transform: 'translateY(50px) scale(0.8)', // Bắt đầu từ dưới và nhỏ
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateY(0) scale(1)', // Lên vị trí bình thường và to ra
+            opacity: '1',
+          },
+        },
       },
     },
   },
+  
   plugins: [
     function ({ addUtilities }) {
       addUtilities({
