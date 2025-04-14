@@ -3,6 +3,7 @@ import React, { createContext, useState, ReactNode } from "react";
 // Định nghĩa type cho FooterComponent
 type FooterComponent = "AccountDetails" | "SettingsDetails" | "FooterHome" | "FooterStudy" | "FooterDetect" | "PersonalDetails" | "Theme" | null;
 
+
 // Định nghĩa type cho AppContext
 interface AppContextType {
   footerComponent: FooterComponent;
@@ -23,6 +24,7 @@ const saveFooterComponent = (component: FooterComponent): void => {
   localStorage.setItem("footerComponent", component || "");
 };
 
+
 // Component AppProvider
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [footerComponent, setFooterComponentState] = useState<FooterComponent>(getSavedFooterComponent);
@@ -37,4 +39,13 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       {children}
     </AppContext.Provider>
   );
+};
+
+// Hook tiện ích để sử dụng AppContext
+export const useAppContext = () => {
+  const context = React.useContext(AppContext);
+  if (!context) {
+    throw new Error("useAppContext must be used within an AppProvider");
+  }
+  return context;
 };
