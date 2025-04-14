@@ -6,6 +6,7 @@ import binocularsIcon from "../assets/binocularsicon.png";
 import profileIcon from "../assets/profileicon.png";
 import settingsIcon from "../assets/settingicon.png";
 import chatIcon from "../assets/chaticon.png";
+import { useAuthContext } from "../context/AuthContext";
 
 const Menus = [
   { title: "Trang chủ", path: "/", icon: homeIcon },
@@ -16,6 +17,8 @@ const Menus = [
 ];
 
 const Header: React.FC = () => {
+  const { user } = useAuthContext(); // Lấy user từ AuthContext
+
   return (
     <nav className="flex flex-col w-1/5 bg-primary h-screen text-white">
       {/* Danh sách menu chính */}
@@ -81,8 +84,12 @@ const Header: React.FC = () => {
           <img src={profileIcon} alt="User" />
         </div>
         <div className="ml-4">
-          <p className="text-sm text-color">Quang Toàn</p>
-          <p className="text-xs text-color">abc@gmail.com</p>
+          <p className="text-sm text-color">
+            {user ? user.username : "Khách"}
+          </p>
+          <p className="text-xs text-color">
+            {user ? user.email : "Chưa đăng nhập"}
+          </p>
         </div>
       </div>
     </nav>

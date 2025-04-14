@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios, { AxiosError } from "axios";
 import imgregister from "../assets/imgregister.jpeg";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+// import { useAppContext } from "../context/AppContext";
+import { useAuthContext } from "../context/AuthContext"
 
 interface LoginFormData {
   email: string;
@@ -13,7 +15,7 @@ interface LoginResponse {
   success: boolean;
   mes?: string;
   accessToken?: string;
-  userData?: { _id: string; username: string; email: string };
+  userData?: { _id: string; username: string; email: string; firstname: string; lastname: string };
 }
 
 const LoginPage: React.FC = () => {
@@ -26,6 +28,7 @@ const LoginPage: React.FC = () => {
   const [success, setSuccess] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const navigate = useNavigate();
+  const { setUser } = useAuthContext();
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
@@ -48,19 +51,23 @@ const LoginPage: React.FC = () => {
     try {
       console.log("Sending login request with:", formData);
       const response = await axios.post<LoginResponse>(
-        "http://localhost:8080/api/users/login", // Điểm sửa chính
+        "http://localhost:8080/api/users/login",
         formData
       );
       console.log("API Response:", response.data);
 
-      if (response.data.success) {
+      if (response.data.success && response.data.userData) {
         setSuccess("Đăng nhập thành công!");
-        // alert("Đăng nhập thành công!");
+        setUser({
+          username: response.data.userData.username,
+          email: response.data.userData.email,
+          firstname: response.data.userData.firstname,
+          lastname: response.data.userData.lastname,
+        });
         console.log("Logged in User:", response.data.userData);
         setTimeout(() => {
-          console.log("Navigating to / now");
           navigate("/");
-        }, 1000);
+        }, 2000);
       } else {
         setError(response.data.mes || "Something went wrong");
       }
@@ -132,9 +139,9 @@ const LoginPage: React.FC = () => {
                 onClick={togglePasswordVisibility}
               >
                 {showPassword ? (
-                  (AiOutlineEyeInvisible as any)({ size: 20 })  
+                  (AiOutlineEyeInvisible as any)({ size: 20 })
                 ) : (
-                  (AiOutlineEye as any)({ size: 20 }) // Ép kiểu để tránh lỗi TS2786
+                  (AiOutlineEye as any)({ size: 20 })
                 )}
               </span>
             </div>
