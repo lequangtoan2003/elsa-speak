@@ -30,11 +30,12 @@ const ConversationList: React.FC = () => {
   };
 
   return (
-    <div className="bg-primary bg-opacity-70 rounded-xl py-4">
+    <div className="bg-primary bg-opacity-70 rounded-xl">
       <div className="text-color ml-24 font-bold mb-4">Trang chủ</div>
-      <Slider {...settings}>
+      <div className="flex flex-col justify-center">
+      <Slider className="" {...settings}>
         {data_products.map((product: Product, i: number) => (
-          <div key={i} className="px-2">
+          <div key={i} className="px-[1px]">
             <Item
               id={product.id}
               author={product.author}
@@ -46,8 +47,9 @@ const ConversationList: React.FC = () => {
           </div>
         ))}
       </Slider>
+      </div>
       <div className="mx-12 w-[63%] border-b border-gray-400 pt-5"></div>
-      <div className="mx-6 text-color font-bold mb-4n pt-5">Hôm nay chúng ta nên làm gì?</div>
+      <div className="mx-auto text-color text-xl font-bold mb-4n p-4">Hôm nay chúng ta nên làm gì?</div>
     </div>
   );
 };

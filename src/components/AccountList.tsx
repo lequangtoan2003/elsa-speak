@@ -13,7 +13,7 @@ const AccountList: React.FC = () => {
     { title: "Profile", path: "/profiledetails?section=account", Icon: profileIcon, component: "AccountDetails" },
     { title: "Settings", path: "/profiledetails?section=settings", Icon: settingsIcon, component: "SettingsDetails" },
     { title: "Theme", path: "/profiledetails?section=theme", Icon: themeIcon, component: "Theme" },
-    { title: "Log out", path: "/", Icon: logoutIcon, component: "LogOut" },
+    { title: "Log out", path: "/login", Icon: logoutIcon, component: "LogOut" },
   ];
 
   return (

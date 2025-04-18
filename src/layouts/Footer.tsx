@@ -45,7 +45,7 @@ const Footer = () => {
   }, [location.pathname, location.search, footerComponent, setFooterComponent]);
 
   return (
-    <footer className="fixed right-0 top-0 w-[28%] h-screen bg-primary text-color py-4 px-6 flex flex-col justify-between items-center shadow-lg">
+    <footer className="fixed right-0 top-0 w-[28%] h-screen bg-primary text-color py-4 flex flex-col justify-between items-center shadow-lg">
       <div className="w-full">
         {footerComponent === "AccountDetails" && <AccountDetails />}
         {footerComponent === "SettingsDetails" && <SettingsDetails />}
