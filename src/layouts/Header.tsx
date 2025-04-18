@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import homeIcon from "../assets/homeicon.png";
 import bookIcon from "../assets/bookicon.png";
 import binocularsIcon from "../assets/binocularsicon.png";
@@ -18,7 +18,7 @@ const Menus = [
 
 const Header: React.FC = () => {
   const { user } = useAuthContext(); // Lấy user từ AuthContext
-
+  
   return (
     <nav className="flex flex-col w-1/5 bg-primary h-screen text-white">
       {/* Danh sách menu chính */}
