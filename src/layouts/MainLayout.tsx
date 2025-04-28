@@ -13,8 +13,8 @@ import ProfileDetails from "../pages/ProfileDetails";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
 import Public from "../pages/Public";
-import ConversationDetails from "../components/ConversationDetails";
 import Footer from "../layouts/Footer";
+import ConversationRouter from "../Router/ConversationRouter";
 const LoginSuccess = React.lazy(() => import("../pages/LoginSuccessPage"));
 const MainLayout: React.FC = () => {
   const location = useLocation(); // Lấy đường dẫn hiện tại
@@ -36,7 +36,7 @@ const MainLayout: React.FC = () => {
             <Route path="/topic-learning" element={<TopicLearning />} />
             <Route path="/certificate" element={<Certificate />} />
             <Route path="/profiledetails" element={<ProfileDetails />} />
-            <Route path="/conversationdetails/:id" element={<ConversationDetails />} />
+            <Route path="/conversationdetails/:id" element={<ConversationRouter />} />
           </Route>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />

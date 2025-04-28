@@ -5,7 +5,7 @@ import axios from "axios";
 
 const HomePage: React.FC = () => {
   const location = useLocation();
-  const token = location.state?.token;
+  const token = location.state?.token || localStorage.getItem("accessToken") || null; 
   console.log("isLoggedIn", token); // Kiểm tra giá trị của isLoggedIn
   const navigation = useNavigate()
   
