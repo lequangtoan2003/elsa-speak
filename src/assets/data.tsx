@@ -7,6 +7,7 @@ interface Product {
   image: string;
   time: string;
   level: string;
+  subject: string;
   major: string;
   topic: string;
   author: string;
@@ -15,6 +16,10 @@ interface Product {
   transcription: string;
   lessons: string;
   image2?: string;
+  width?: string;
+  height?: string;
+  text?: string; // Prop để truyền class Tailwind cho chiều rộng (ví dụ: w-[320px])
+  
 }
 
 const productData: Product[] = [
@@ -24,8 +29,9 @@ const productData: Product[] = [
     image: p1_img,
     time: "3-5 minutes",
     level: "easy0",
+    subject: "Cụm từ",
     major: "ielts",
-    topic: "phát âm",
+    topic: "Phát âm",
     author: "bởi quangtoan2003",
     vocab: "32 từ vựng",
     like: "33.7k",
@@ -39,8 +45,9 @@ const productData: Product[] = [
     image: p1_img,
     time: "3-5 minutes",
     level: "easy1",
+    subject: "Cụm từ",
     major: "ielts",
-    topic: "phát âm",
+    topic: "Văn hoá",
     author: "bởi quangtoan2003",
     vocab: "32 từ vựng",
     like: "33.7k",
@@ -54,8 +61,9 @@ const productData: Product[] = [
     image: p1_img,
     time: "3-5 minutes",
     level: "easy2",
+    subject: "Cụm từ",
     major: "ielts",
-    topic: "phát âm",
+    topic: "IELTS",
     author: "bởi quangtoan2003",
     vocab: "32 từ vựng",
     like: "33.7k",
@@ -69,8 +77,9 @@ const productData: Product[] = [
     image: p1_img,
     time: "3-5 minutes",
     level: "easy3",
+    subject: "Cụm từ",
     major: "ielts",
-    topic: "phát âm",
+    topic: "Công việc",
     author: "bởi quangtoan2003",
     vocab: "32 từ vựng",
     like: "33.7k",
@@ -84,8 +93,25 @@ const productData: Product[] = [
     image: p1_img,
     time: "3-5 minutes",
     level: "easy4",
+    subject: "Cụm từ",
     major: "ielts",
-    topic: "phát âm",
+    topic: "Âm nhạc và phim ảnh",
+    author: "bởi quangtoan2003",
+    vocab: "32 từ vựng",
+    like: "33.7k",
+    transcription: "/i/, /I/",
+    lessons: "0/14 Bài học",
+    image2: p2_img
+  },
+  {
+    id: 6,
+    title: "Family Game Night",
+    image: p1_img,
+    time: "3-5 minutes",
+    level: "easy4",
+    subject: "Cụm từ",
+    major: "ielts",
+    topic: "Âm nhạc và phim ảnh",
     author: "bởi quangtoan2003",
     vocab: "32 từ vựng",
     like: "33.7k",
